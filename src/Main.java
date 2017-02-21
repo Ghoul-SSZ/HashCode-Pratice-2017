@@ -10,7 +10,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        System.out.println("Hello World!");
+        System.out.println("Hello Google!");
         System.out.println("Run for me you bitch");
         System.out.println("Test combination is" + testCombinations(5).toString());
 
