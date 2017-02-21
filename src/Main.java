@@ -11,8 +11,7 @@ public class Main {
     public static ArrayList<ArrayList<Character>> twoDMap = new ArrayList<>();
     public static void main(String[] args) {
 
-        System.out.println("Hello klaskdjfks");
-        System.out.println("sakdfjlkasj");
+        System.out.println("Hello Google!");
         System.out.println("Test combination is" + testCombinations(5).toString());
 
         String filePath = "small.in";
