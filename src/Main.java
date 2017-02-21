@@ -13,15 +13,15 @@ public class Main {
     //starting with half row number
     public static LinkedList testCombinations(int max){
         LinkedList<AbstractMap.SimpleEntry> sliceSize = new LinkedList<AbstractMap.SimpleEntry>();
-        for(int i = 1; i<max;i++) {
+        for(int i = 1; i<=max;i++) {
             sliceSize.add(new AbstractMap.SimpleEntry<Integer, Integer>(1, i));
 
         }
-        for (int j = 2; j < max; j++) {
+        for (int j = 2; j <= max; j++) {
             sliceSize.add(new AbstractMap.SimpleEntry<Integer, Integer>(j, 1));
         }
 
-        for(int i = 1; i<max;i++)
+        for(int i = 1; i<=max;i++)
             for (int j = 2; j < max; j++)
                 if(i*j <= max && i==j) sliceSize.add(new AbstractMap.SimpleEntry<Integer, Integer>(i,j));
 
