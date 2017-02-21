@@ -1,13 +1,14 @@
+import com.sun.xml.internal.fastinfoset.util.CharArray;
+
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.AbstractMap;
-import java.util.Arrays;
-import java.util.LinkedList;
+import java.lang.reflect.Array;
+import java.util.*;
 
 public class Main {
-
+    public static ArrayList<ArrayList<Character>> twoDMap = new ArrayList<>();
     public static void main(String[] args) {
 
         System.out.println("Hello klaskdjfks");
@@ -16,6 +17,7 @@ public class Main {
 
         String filePath = "small.in";
         stream_input(filePath);
+        System.out.println(twoDMap.toString());
     }
 
     //starting with half row number
@@ -48,10 +50,12 @@ public class Main {
             System.out.println("line1 is here  " +line1);
             while((line = br.readLine()) != null){
                 char [] charTemp =line.toCharArray();
-
-                for (int i = 0; i<charTemp.length; i++){
-
+                ArrayList<Character> cAlist = new ArrayList<Character>() ;
+                for(char c : charTemp) {
+                    cAlist.add(c);
                 }
+                    twoDMap.add(cAlist);
+
             }
 
         } catch (FileNotFoundException e) {
