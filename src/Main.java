@@ -1,11 +1,10 @@
-import com.sun.xml.internal.fastinfoset.util.CharArray;
-
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.lang.reflect.Array;
-import java.util.*;
+import java.util.AbstractMap;
+import java.util.Arrays;
+import java.util.LinkedList;
 
 public class Main {
     public static ArrayList<ArrayList<Character>> twoDMap = new ArrayList<>();
@@ -14,8 +13,13 @@ public class Main {
         System.out.println("Hello Google!");
         System.out.println("Test combination is" + testCombinations(5).toString());
 
+        //import input files
         String filePath = "small.in";
         stream_input(filePath);
+
+        //main process
+
+
         System.out.println(twoDMap.toString());
     }
 
