@@ -2,33 +2,44 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.AbstractMap;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.LinkedList;
+import java.util.*;
 
 public class Main {
     public static ArrayList<ArrayList<Character>> twoDMap = new ArrayList<>();
     public static void main(String[] args) {
 
-        System.out.println("Hello Google!");
+        System.out.println("Hello HashCode!  :D ");
         System.out.println("Test combination is" + testCombinations(5).toString());
 
         //import input files
         String filePath = "small.in";
         stream_input(filePath);
 
-        //main process
-
-
         System.out.println(twoDMap.toString());
+
+        //information setup
+        Scanner in = new Scanner(System.in);
+        //How many Tomato must be in one slice of pizza
+        //System.out.println();
+        int t = 1;
+
+        //How many Mushroom must be in one slice of pizza
+        //System.out.println();
+        int m = 1;
+
+        //main process
+        HashMap<Integer,Integer> request = new HashMap<>();
+        System.out.println(request.isEmpty());
+
     }
 
     //starting with half row number
     public static LinkedList testCombinations(int max){
         LinkedList<AbstractMap.SimpleEntry> sliceSize = new LinkedList<AbstractMap.SimpleEntry>();
-        for(int i = 1; i<=max;i++) {
-            sliceSize.add(new AbstractMap.SimpleEntry<Integer, Integer>(1, i));
+        for(int i = 1; i<=max ;i++) {
+            if (i != 1){
+                sliceSize.add(new AbstractMap.SimpleEntry<Integer, Integer>(1, i));
+            }
 
         }
         for (int j = 2; j <= max; j++) {
@@ -67,6 +78,26 @@ public class Main {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+    }
+
+    //Checking if the pizza slice already fulfilled the requirement
+    public boolean statusCheck (int tomato, int mushroom, ArrayList<Character> testing){
+        int tomatoCount=0;
+        int mushroomCount=0;
+        for (int i=0; i<testing.size();i++) {
+            if (testing.get(i).toString() == "T") {
+                tomatoCount++;
+            } else if (testing.get(i).toString() == "M") {
+                mushroomCount++;
+            } else {
+                System.out.println("Dude, something is wrong!");
+            }
+        }
+
+        if (tomatoCount >= tomato && mushroom >= mushroomCount){
+            return true;
+        }else{return false;}
 
     }
 
